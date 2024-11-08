@@ -39,22 +39,20 @@ async def retrieve_companies():
     return companies
 
 
-async def retrieve_company(id: str) -> Optional[dict]:
-    company = await company_collection.find_one({"_id": ObjectId(id)})
+async def retrieve_company(email: str) -> Optional[dict]:
+    company = await company_collection.find_one({"email": email})
     if company:
         return company_helper(company)
 
 
-async def update_company(id: str, data: dict):
+async def update_company(email: str, data: dict):
     if len(data) < 1:
         return False
-    if await company_collection.find_one({"_id": ObjectId(id)}):
-        return await company_collection.update_one(
-            {"_id": ObjectId(id)}, {"$set": data}
-        )
+    if await company_collection.find_one({"email": email}):
+        return await company_collection.update_one({"email": email}, {"$set": data})
 
 
-async def delete_company(id: str):
-    if company := await company_collection.find_one({"_id": ObjectId(id)}):
-        await company_collection.delete_one({"_id": ObjectId(id)})
+async def delete_company(email: str):
+    if company := await company_collection.find_one({"email": email}):
+        await company_collection.delete_one({"email": email})
     return company
