@@ -47,27 +47,27 @@ async def add_applicant(applicant_data: dict) -> dict:
     return applicant_helper(new_applicant)
 
 
-async def retrieve_applicant(id: str) -> Optional[dict]:
-    applicant = await applicant_collection.find_one({"_id": ObjectId(id)})
+async def retrieve_applicant(email: str) -> Optional[dict]:
+    applicant = await applicant_collection.find_one({"email": email})
     if applicant:
         return applicant_helper(applicant)
 
 
-async def update_applicant(id: str, data: dict):
+async def update_applicant(email: str, data: dict):
     if len(data) < 1:
         return False
-    applicant = await applicant_collection.find_one({"_id": ObjectId(id)})
+    applicant = await applicant_collection.find_one({"email": email})
     if applicant:
         updated_applicant = await applicant_collection.update_one(
-            {"_id": ObjectId(id)}, {"$set": data}
+            {"email": email}, {"$set": data}
         )
         if updated_applicant:
             return True
         return False
 
 
-async def delete_applicant(id: str):
-    applicant = await applicant_collection.find_one({"_id": ObjectId(id)})
+async def delete_applicant(email: str):
+    applicant = await applicant_collection.find_one({"email": email})
     if applicant:
-        await applicant_collection.delete_one({"_id": ObjectId(id)})
+        await applicant_collection.delete_one({"email": email})
         return True

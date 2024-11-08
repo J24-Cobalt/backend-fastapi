@@ -33,21 +33,21 @@ async def get_companies():
     return ResponseModel(companys, "Empty list returned")
 
 
-@router.get("/{id}", response_description="company data retrieved")
-async def get_company_data(id):
-    company = await retrieve_company(id)
+@router.get("/{email}", response_description="company data retrieved")
+async def get_company_data(email):
+    company = await retrieve_company(email)
     if company:
         return ResponseModel(company, "company data retrieved successfully")
     return ErrorResponseModel("An error occurred.", 404, "company doesn't exist.")
 
 
-@router.put("/{id}")
-async def update_company_data(id: str, req: UpdateCompanyModel = Body(...)):
+@router.put("/{email}")
+async def update_company_data(email: str, req: UpdateCompanyModel = Body(...)):
     req = {k: v for k, v in req.dict().items() if v is not None}
-    updated_company = await update_company(id, req)
+    updated_company = await update_company(email, req)
     if updated_company:
         return ResponseModel(
-            "company with ID: {} name update is successful".format(id),
+            "company with email: {} name update is successful".format(email),
             "company name updated successfully",
         )
     return ErrorResponseModel(
@@ -57,14 +57,17 @@ async def update_company_data(id: str, req: UpdateCompanyModel = Body(...)):
     )
 
 
-@router.delete("/{id}", response_description="company data deleted from the database")
-async def delete_company_data(id: str):
-    deleted_company = await delete_company(id)
+@router.delete(
+    "/{email}", response_description="company data deleted from the database"
+)
+async def delete_company_data(email: str):
+    deleted_company = await delete_company(email)
     if deleted_company:
         return ResponseModel(
-            "company with ID: {} removed".format(id), "company deleted successfully"
+            "company with email: {0} removed".format(email),
+            "company deleted successfully",
         )
     return ErrorResponseModel(
-        "An error occurred", 404, "companywith id {0} doesn't exist".format(id)
+        "An error occurred", 404, "companywith email {0} doesn't exist".format(email)
     )
 
