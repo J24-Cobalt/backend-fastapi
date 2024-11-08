@@ -1,11 +1,13 @@
 from typing import Dict, Optional, List, Any
 
-from pydantic import BaseModel, EmailStr, Field # type: ignore
+from pydantic import BaseModel, EmailStr, Field  # type: ignore
+
 
 class Job(BaseModel):
     title: str
     description: str
     location: str
+
 
 class MatchingSchema(BaseModel):
     name: str = Field(...)
@@ -18,6 +20,8 @@ class MatchingSchema(BaseModel):
                 "company": "Company Name",
             }
         }
+
+
 def ResponseModel(data, message):
     return {
         "data": [data],

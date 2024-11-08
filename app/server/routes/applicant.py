@@ -1,5 +1,5 @@
-from fastapi import APIRouter, Body #type: ignore
-from fastapi.encoders import jsonable_encoder #type: ignore
+from fastapi import APIRouter, Body  # type: ignore
+from fastapi.encoders import jsonable_encoder  # type: ignore
 
 from server.database import (
     add_applicant,
@@ -18,12 +18,12 @@ from server.models.applicant import (
 router = APIRouter()
 
 
-
 @router.post("/", response_description="Applicant data added into the database")
 async def add_applicant_data(applicant: ApplicantSchema = Body(...)):
     applicant = jsonable_encoder(applicant)
     new_applicant = await add_applicant(applicant)
     return ResponseModel(new_applicant, "Applicant added successfully.")
+
 
 @router.get("/", response_description="Applicants retrieved")
 async def get_applicants():
@@ -40,6 +40,7 @@ async def get_applicant_data(id):
         return ResponseModel(applicant, "Applicant data retrieved successfully")
     return ErrorResponseModel("An error occurred.", 404, "Applicant doesn't exist.")
 
+
 @router.put("/{id}")
 async def update_applicant_data(id: str, req: UpdateApplicantModel = Body(...)):
     req = {k: v for k, v in req.dict().items() if v is not None}
@@ -55,6 +56,7 @@ async def update_applicant_data(id: str, req: UpdateApplicantModel = Body(...)):
         "There was an error updating the applicant data.",
     )
 
+
 @router.delete("/{id}", response_description="Applicant data deleted from the database")
 async def delete_applicant_data(id: str):
     deleted_applicant = await delete_applicant(id)
@@ -65,3 +67,4 @@ async def delete_applicant_data(id: str):
     return ErrorResponseModel(
         "An error occurred", 404, "Applicantwith id {0} doesn't exist".format(id)
     )
+

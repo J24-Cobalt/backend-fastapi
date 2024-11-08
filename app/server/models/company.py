@@ -1,11 +1,13 @@
 from typing import Dict, Optional, List, Any
 
-from pydantic import BaseModel, EmailStr, Field # type: ignore
+from pydantic import BaseModel, EmailStr, Field  # type: ignore
+
 
 class Job(BaseModel):
     title: str
     description: str
     location: str
+
 
 class CompanySchema(BaseModel):
     # - COMPANY ATTRIBUTES -
@@ -24,7 +26,6 @@ class CompanySchema(BaseModel):
     # - MATCHING ATTRIBUTES -
     potential_applicants: Optional[List[str]] = Field(default_factory=list)
     has_matched: Optional[List] = Field(default_factory=list)
-
 
     class Config:
         schema_extra = {
@@ -50,6 +51,7 @@ class CompanySchema(BaseModel):
                 "has_matched": ["Jonathan Doe"],
             }
         }
+
 
 class UpdateCompanyModel(BaseModel):
     # - COMPANY ATTRIBUTES -
@@ -93,7 +95,6 @@ class UpdateCompanyModel(BaseModel):
                 "has_matched": ["Jonathan Doe"],
             }
         }
-
 
 
 def ResponseModel(data, message):
