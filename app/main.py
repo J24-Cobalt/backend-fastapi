@@ -1,8 +1,8 @@
-from fastapi import FastAPI, HTTPException
-from pydantic import BaseModel
+from fastapi import FastAPI, HTTPException # type: ignore
+from pydantic import BaseModel # type: ignore
 from typing import List
-from pymongo import MongoClient
-from bson import ObjectId
+from pymongo import MongoClient # type: ignore
+from bson import ObjectId # type: ignore
 import os
 
 app = FastAPI()
