@@ -3,9 +3,10 @@ from bson.objectid import ObjectId  # type: ignore
 from typing import Optional
 import os
 
-client = motor.motor_asyncio.AsyncIOMotorClient(os.environ["MONGODB_URL"])
-database = client.applicants
-applicant_collection = database.get_collection("applicants_collection")
+
+client = motor.motor_asyncio.AsyncIOMotorClient(open(os.path.join(os.getcwd(), 'env'), 'r').read().strip())
+applicants_db = client.applicants
+applicant_collection = applicants_db.get_collection("applicants_collection")
 
 
 def applicant_helper(applicant) -> dict:
