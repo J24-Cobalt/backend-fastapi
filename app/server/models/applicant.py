@@ -47,7 +47,7 @@ class ApplicantSchema(BaseModel):
             "example": {
                 "fullname": "John Doe",
                 "username": "Janette Done",
-                "password": "password123",
+                "password": "password123456",
                 "email": "jdoe@x.edu.ng",
                 "years_of_employment": 5,
                 "employment_status": "employed",
@@ -110,7 +110,7 @@ class UpdateApplicantModel(BaseModel):
             "example": {
                 "fullname": "John Doe",
                 "username": "Janette Done",
-                "password": "password123",
+                "password": "password123456",
                 "email": "jdoe@x.edu.ng",
                 "years_of_employment": 5,
                 "employment_status": "employed",
