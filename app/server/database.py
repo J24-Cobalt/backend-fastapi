@@ -1,12 +1,10 @@
-import motor.motor_asyncio #type: ignore
-from bson.objectid import ObjectId #type: ignore
+import motor.motor_asyncio  # type: ignore
+from bson.objectid import ObjectId  # type: ignore
+from typing import Optional
+import os
 
-MONGO_DETAILS = "mongodb://localhost:27017"
-
-client = motor.motor_asyncio.AsyncIOMotorClient(MONGO_DETAILS)
-
+client = motor.motor_asyncio.AsyncIOMotorClient(os.environ["MONGODB_URL"])
 database = client.applicants
-
 applicant_collection = database.get_collection("applicants_collection")
 
 
@@ -36,16 +34,19 @@ async def retrieve_applicants():
         applicants.append(applicant_helper(applicant))
     return applicants
 
+
 # NOT FIT FOR PRODUCTION. PASSWORD NOT HASHED!!! unicode-skull*7
 async def add_applicant(applicant_data: dict) -> dict:
     applicant = await applicant_collection.insert_one(applicant_data)
     new_applicant = await applicant_collection.find_one({"_id": applicant.inserted_id})
     return applicant_helper(new_applicant)
 
-async def retrieve_applicant(id: str) -> dict:
+
+async def retrieve_applicant(id: str) -> Optional[dict]:
     applicant = await applicant_collection.find_one({"_id": ObjectId(id)})
     if applicant:
         return applicant_helper(applicant)
+
 
 async def update_applicant(id: str, data: dict):
     if len(data) < 1:
@@ -59,8 +60,10 @@ async def update_applicant(id: str, data: dict):
             return True
         return False
 
+
 async def delete_applicant(id: str):
     applicant = await applicant_collection.find_one({"_id": ObjectId(id)})
     if applicant:
         await applicant_collection.delete_one({"_id": ObjectId(id)})
         return True
+
