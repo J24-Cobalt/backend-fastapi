@@ -1,6 +1,6 @@
 from fastapi import FastAPI # type: ignore
 
-from server.routes.applicant import router as ApplicantRouter # type: ignore
+from server.routes.applicant import router as ApplicantRouter
 from server.routes.company import router as CompanyRouter
 from server.routes.matching import router as MatchingRouter
 
