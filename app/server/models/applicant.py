@@ -1,6 +1,6 @@
 from typing import Dict, Optional, List, Any
 
-from pydantic import BaseModel, EmailStr, Field # type: ignore
+from pydantic import BaseModel, EmailStr, Field, field_validator # type: ignore
 
 class WorkExperience(BaseModel):
     company: str
@@ -34,8 +34,14 @@ class ApplicantSchema(BaseModel):
     skills: Optional[List[str]] = Field(default_factory=list)  # List of skills
     mental_profile: Optional[Dict[str, Any]] = Field(default_factory=dict)  # Mental profile as a dict
     cv: Optional[str] = Field(None)  # URL or path to the CV
-    applications: Optional[List[Dict[str, Any]]] = Field(default_factory=list)  # List of applications
+    applications: Optional[List[Dict[str, Any]]] = Field(default_factory=list)
 
+    @field_validator('applications')
+    def limit_applications(cls, v):
+        if v and len(v) > 5:
+            raise ValueError("The number of applications cannot exceed 5.")
+        return v
+    
     class Config:
         schema_extra = {
             "example": {

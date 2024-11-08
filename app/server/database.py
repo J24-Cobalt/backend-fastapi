@@ -17,7 +17,16 @@ def applicant_helper(applicant) -> dict:
         "email": applicant["email"],
         "years_of_employment": applicant["years_of_employment"],
         "employment_status": applicant["employment_status"],
-        "univeristy_gpa": applicant["university_gpa"],
+        "age": applicant["age"],
+        "gender": applicant["gender"],
+        "intro": applicant["intro"],
+        "avatar": applicant["avatar"],
+        "work_experience": applicant["work_experience"],
+        "education": applicant["education"],
+        "skills": applicant["skills"],
+        "mental_profile": applicant["mental_profile"],
+        "cv": applicant["cv"],
+        "applications": applicant["applications"],
     }
 
 
