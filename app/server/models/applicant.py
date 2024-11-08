@@ -19,22 +19,31 @@ class Education(BaseModel):
 
 
 class ApplicantSchema(BaseModel):
+    
+    # - USER INFORMATION -
     fullname: str = Field(...)
     username: str = Field(...)
     password: str = Field(..., min_length=12)
     email: EmailStr = Field(...)
+   
+    # - APPLICANT ATTRIBUTES -
     years_of_employment: Optional[int] = Field(0)
     employment_status: str = Field("unemployed")
     age: Optional[int] = Field(None, ge=0)
     gender: Optional[str] = Field(None, pattern=r'^(Male|Female|Other)$') 
     intro: Optional[str] = Field(None, max_length=250)  # Short description
-    avatar: Optional[str] = Field(None)  # URL to avatar image
     work_experience: Optional[List[WorkExperience]] = Field(default_factory=list)
     education: Optional[List[Education]] = Field(default_factory=list)
     skills: Optional[List[str]] = Field(default_factory=list)  # List of skills
     mental_profile: Optional[Dict[str, Any]] = Field(default_factory=dict)  # Mental profile as a dict
+   
+    # - OTHER ATTRIBUTES WE DO NOT CARE ABOUT YET -
+    avatar: Optional[str] = Field(None)  # URL to avatar image
     cv: Optional[str] = Field(None)  # URL or path to the CV
-    applications: Optional[List[Dict[str, Any]]] = Field(default_factory=list)
+   
+    # - MATCHING ATTRIBUTES -
+    applications: Optional[List] = Field(default_factory=list)
+    has_matched: Optional[List] = Field(default_factory=list)
 
     @field_validator('applications')
     def limit_applications(cls, v):
@@ -80,30 +89,37 @@ class ApplicantSchema(BaseModel):
                     "weaknesses": ["Perfectionist"]
                 },
                 "cv": "https://example.com/cv.pdf",
-                "applications": [
-                    {"job_id": 1, "status": "pending", "date_applied": "2023-10-15"}
-                ]
+                "applications": ["string"],
+                "has_matched": ["string"]
             }
         }
 
 
 class UpdateApplicantModel(BaseModel):
+    # - USER INFORMATION -
     fullname: Optional[str]
     username: str = Field(...)
     password: str = Field(..., min_length=12)
     email: Optional[EmailStr]
+
+    # - APPLICANT ATTRIBUTES -
     years_of_employment: Optional[int]
     employment_status: Optional[str]
     age: Optional[int]
     gender: Optional[str]
     intro: Optional[str]
-    avatar: Optional[str]
     work_experience: Optional[List[WorkExperience]]
     education: Optional[List[Education]]
     skills: Optional[List[str]]
     mental_profile: Optional[Dict[str, Any]]
+    
+    # - OTHER ATTRIBUTES WE DO NOT CARE ABOUT YET -
+    avatar: Optional[str]
     cv: Optional[str]
-    applications: Optional[List[Dict[str, Any]]]
+
+    # - MATCHING ATTRIBUTES -
+    applications: Optional[List]
+    has_matched: Optional[List]
 
     class Config:
         schema_extra = {
@@ -143,9 +159,8 @@ class UpdateApplicantModel(BaseModel):
                     "weaknesses": ["Perfectionist"]
                 },
                 "cv": "https://example.com/cv.pdf",
-                "applications": [
-                    {"job_id": 1, "status": "pending", "date_applied": "2023-10-15"}
-                ]
+                "applications": ["string"],
+                "has_matched": ["string"]
             }
         }
 

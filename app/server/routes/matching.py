@@ -3,9 +3,6 @@ from fastapi.encoders import jsonable_encoder #type: ignore
 from server.database import retrieve_applicants, retrieve_applicant
 from server.company_database import retrieve_companies, retrieve_company
 
-# from server.matching_database import (
-    # find_match_for_applicant,
-# )
 from server.models.matching import (
     ErrorResponseModel,
     ResponseModel,
