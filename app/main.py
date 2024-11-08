@@ -4,6 +4,7 @@ from typing import List
 from pymongo import MongoClient # type: ignore
 from bson import ObjectId # type: ignore
 import os
+import uvicorn # type: ignore
 
 app = FastAPI()
 
@@ -55,3 +56,7 @@ async def delete_user(user_id: str):
     if result.deleted_count == 1:
         return {"message": "User deleted"}
     raise HTTPException(status_code=404, detail="User not found")
+
+
+if __name__ == "__main__":
+    uvicorn.run("main:app", host="127.0.0.1", port=8000, reload=True)
