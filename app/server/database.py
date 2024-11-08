@@ -10,7 +10,7 @@ client = motor.motor_asyncio.AsyncIOMotorClient(
 applicants_db = client.applicants
 applicant_collection = applicants_db.get_collection("applicants_collection")
 companies_db = client.companies
-company_collection = companies_db.get_collection("companis_collection")
+company_collection = companies_db.get_collection("companies_collection")
 
 
 def applicant_helper(applicant) -> dict:
