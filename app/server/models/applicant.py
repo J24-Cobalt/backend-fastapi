@@ -22,7 +22,7 @@ class ApplicantSchema(BaseModel):
         }
 
 
-class UpdateStudentModel(BaseModel):
+class UpdateApplicantModel(BaseModel):
     fullname: Optional[str]
     email: Optional[EmailStr]
     years_of_employment: Optional[str]
