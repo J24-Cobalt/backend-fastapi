@@ -27,6 +27,7 @@ async def retrieve_applicants():
         applicants.append(applicant_helper(applicant))
     return applicants
 
+# NOT FIT FOR PRODUCTION. PASSWORD NOT HASHED!!! unicode-skull*7
 async def add_applicant(applicant_data: dict) -> dict:
     applicant = await applicant_collection.insert_one(applicant_data)
     new_applicant = await applicant_collection.find_one({"_id": applicant.inserted_id})
