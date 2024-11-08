@@ -1,11 +1,12 @@
 # Database starting 
 
+from folder: "backend" run: 
+
 -- main process
 mongod --dbpath ~/data/db
 
 
 -- child process
-from folder: "backend" run: 
 mongod --dbpath ~/data/db --fork --logpath ~/data/mongod.log
 
 to stop:

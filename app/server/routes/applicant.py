@@ -17,6 +17,8 @@ from server.models.applicant import (
 
 router = APIRouter()
 
+
+
 @router.post("/", response_description="Applicant data added into the database")
 async def add_applicant_data(applicant: ApplicantSchema = Body(...)):
     applicant = jsonable_encoder(applicant)
@@ -61,5 +63,5 @@ async def delete_applicant_data(id: str):
             "Applicant with ID: {} removed".format(id), "Applicant deleted successfully"
         )
     return ErrorResponseModel(
-        "An error occurred", 404, "Applicant with id {0} doesn't exist".format(id)
+        "An error occurred", 404, "Applicantwith id {0} doesn't exist".format(id)
     )
