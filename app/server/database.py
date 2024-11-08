@@ -33,6 +33,19 @@ def applicant_helper(applicant) -> dict:
     }
 
 
+
+
+
+
+
+
+
+
+
+
+
+# vvvvvvvvvv JUNK TESTING CODE vvvvvvvvvv 
+
 async def retrieve_applicants():
     applicants = []
     async for applicant in applicant_collection.find():
