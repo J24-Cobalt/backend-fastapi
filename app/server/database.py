@@ -4,9 +4,13 @@ from typing import Optional
 import os
 
 
-client = motor.motor_asyncio.AsyncIOMotorClient(open(os.path.join(os.getcwd(), 'env'), 'r').read().strip())
+client = motor.motor_asyncio.AsyncIOMotorClient(
+    open(os.path.join(os.getcwd(), "env"), "r").read().strip()
+)
 applicants_db = client.applicants
-applicant_collection = applicants_db.get_collection("applicants_collection") 
+applicant_collection = applicants_db.get_collection("applicants_collection")
+companies_db = client.companies
+company_collection = companies_db.get_collection("companis_collection")
 
 
 def applicant_helper(applicant) -> dict:
@@ -67,4 +71,3 @@ async def delete_applicant(id: str):
     if applicant:
         await applicant_collection.delete_one({"_id": ObjectId(id)})
         return True
-
