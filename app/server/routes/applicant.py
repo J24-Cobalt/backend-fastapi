@@ -20,9 +20,12 @@ router = APIRouter()
 
 @router.post("/", response_description="Applicant data added into the database")
 async def add_applicant_data(applicant: ApplicantSchema = Body(...)):
-    applicant = jsonable_encoder(applicant)
-    new_applicant = await add_applicant(applicant)
-    return ResponseModel(new_applicant, "Applicant added successfully.")
+    if new_applicant := await add_applicant(jsonable_encoder(applicant)):
+        return ResponseModel(new_applicant, "Applicant added successfully.")
+    else:
+        return ErrorResponseModel(
+            "failed to add applicant", 403, "applicant already exists"
+        )
 
 
 @router.get("/", response_description="Applicants retrieved")

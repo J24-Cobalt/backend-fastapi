@@ -3,7 +3,6 @@ from bson.objectid import ObjectId  # type: ignore
 from typing import Optional
 import os
 
-
 client = motor.motor_asyncio.AsyncIOMotorClient(
     open(os.path.join(os.getcwd(), "env"), "r").read().strip()
 )
@@ -55,6 +54,9 @@ async def retrieve_applicants():
 
 # NOT FIT FOR PRODUCTION. PASSWORD NOT HASHED!!! unicode-skull*7
 async def add_applicant(applicant_data: dict) -> dict:
+    if applicant_collection.find_one({"email": applicant_data["email"]}):
+        return {}
+
     applicant = await applicant_collection.insert_one(applicant_data)
     new_applicant = await applicant_collection.find_one({"_id": applicant.inserted_id})
     return applicant_helper(new_applicant)

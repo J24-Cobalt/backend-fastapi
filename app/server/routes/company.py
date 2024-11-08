@@ -20,9 +20,12 @@ router = APIRouter()
 
 @router.post("/", response_description="company data added into the database")
 async def add_company_data(company: CompanySchema = Body(...)):
-    company = jsonable_encoder(company)
-    new_company = await add_company(company)
-    return ResponseModel(new_company, "company added successfully.")
+    if new_company := await add_company(jsonable_encoder(company)):
+        return ResponseModel(new_company, "company added successfully.")
+    else:
+        return ErrorResponseModel(
+            "failed to add company", 403, "company already exists"
+        )
 
 
 @router.get("/", response_description="companys retrieved")
@@ -70,4 +73,3 @@ async def delete_company_data(email: str):
     return ErrorResponseModel(
         "An error occurred", 404, "companywith email {0} doesn't exist".format(email)
     )
-

@@ -26,7 +26,10 @@ def company_helper(company) -> dict:
 # vvvvvvvvvv JUNK TESTING CODE vvvvvvvvvv 
 
 # NOT FIT FOR PRODUCTION. PASSWORD NOT HASHED!!! unicode-skull*7
-async def add_company(company_data: dict) -> dict:
+async def add_company(company_data: dict):
+    if company_collection.find_one({"email": company_data["email"]}):
+        return {}
+
     company = await company_collection.insert_one(company_data)
     new_company = await company_collection.find_one({"_id": company.inserted_id})
     return company_helper(new_company)
