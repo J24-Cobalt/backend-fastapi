@@ -6,7 +6,7 @@ import os
 
 client = motor.motor_asyncio.AsyncIOMotorClient(open(os.path.join(os.getcwd(), 'env'), 'r').read().strip())
 applicants_db = client.applicants
-applicant_collection = applicants_db.get_collection("applicants_collection")
+applicant_collection = applicants_db.get_collection("applicants_collection") 
 
 
 def applicant_helper(applicant) -> dict:
