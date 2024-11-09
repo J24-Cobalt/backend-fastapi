@@ -1,0 +1,112 @@
+[
+    {
+        "iscompany": true,
+        "name": "TechWave Oy",
+        "email": "contact@techwave.com",
+        "password": "strongpassword654321",
+        "culture_metric": {
+            "culture": "Innovative",
+            "environment": "Collaborative",
+            "safety": "Excellent"
+        },
+        "jobs": [
+            {
+                "title": "Data Scientist",
+                "description": "We are seeking a data scientist to drive our data initiatives.",
+                "location": "Helsinki, FI"
+            }
+        ],
+        "logo": "https://example.com/techwave_logo.png",
+        "description": "TechWave Oy focuses on advancing data-driven solutions for a variety of industries.",
+        "potential_applicants": ["Alice Johnson", "Michael Chen"],
+        "has_matched": ["Sara Martinez"]
+    },
+    {
+        "iscompany": true,
+        "name": "EcoFuture Oy",
+        "email": "info@ecofuture.org",
+        "password": "passwordforbusiness1234",
+        "culture_metric": {
+            "culture": "Eco-Friendly",
+            "environment": "Sustainable",
+            "safety": "High Standards"
+        },
+        "jobs": [
+            {
+                "title": "Environmental Consultant",
+                "description": "Seeking an environmental consultant to assist with green projects.",
+                "location": "Stockholm, SE"
+            }
+        ],
+        "logo": "https://example.com/ecofuture_logo.png",
+        "description": "EcoFuture Oy is dedicated to environmental conservation and sustainable development.",
+        "potential_applicants": ["Laura Smith", "Daniel Kim"],
+        "has_matched": ["Alice Johnson"]
+    },
+    {
+        "iscompany": true,
+        "name": "SmartSolutions Oy",
+        "email": "hr@smartsolutions.com",
+        "password": "complexcompanypass45678",
+        "culture_metric": {
+            "culture": "Progressive",
+            "environment": "Fast-Paced",
+            "safety": "Secure"
+        },
+        "jobs": [
+            {
+                "title": "Product Manager",
+                "description": "We are hiring a product manager to lead new product initiatives.",
+                "location": "Oslo, NO"
+            }
+        ],
+        "logo": "https://example.com/smartsolutions_logo.png",
+        "description": "SmartSolutions Oy is a leading company in product innovation and technology.",
+        "potential_applicants": ["Sara Martinez", "Michael Chen"],
+        "has_matched": ["Laura Smith"]
+    },
+    {
+        "iscompany": true,
+        "name": "BioMedix Oy",
+        "email": "careers@biomedix.com",
+        "password": "securepassword789010",
+        "culture_metric": {
+            "culture": "Health-Focused",
+            "environment": "Research-Oriented",
+            "safety": "High Priority"
+        },
+        "jobs": [
+            {
+                "title": "Biomedical Engineer",
+                "description": "Hiring a biomedical engineer to work on healthcare technology solutions.",
+                "location": "Copenhagen, DK"
+            }
+        ],
+        "logo": "https://example.com/biomedix_logo.png",
+        "description": "BioMedix Oy specializes in biomedical solutions aimed at improving healthcare.",
+        "potential_applicants": ["Daniel Kim", "Alice Johnson"],
+        "has_matched": ["Michael Chen"]
+    },
+    {
+        "iscompany": true,
+        "name": "GreenFields Oy",
+        "email": "jobs@greenfields.com",
+        "password": "newcompanypassword112233",
+        "culture_metric": {
+            "culture": "Sustainable",
+            "environment": "Open",
+            "safety": "Very High"
+        },
+        "jobs": [
+            {
+                "title": "Agricultural Scientist",
+                "description": "Looking for an agricultural scientist to lead sustainable farming projects.",
+                "location": "Amsterdam, NL"
+            }
+        ],
+        "logo": "https://example.com/greenfields_logo.png",
+        "description": "GreenFields Oy is committed to sustainable agriculture and environmental research.",
+        "potential_applicants": ["Laura Smith", "Sara Martinez"],
+        "has_matched": ["Daniel Kim"]
+    }
+]

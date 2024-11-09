@@ -1,0 +1,85 @@
+{
+  "iscompany": false,
+  "fullname": "string",
+  "email": "user@example.com",
+  "years_of_employment": 0,
+  "employment_status": "unemployed",
+  "age": 0,
+  "gender": "Other",
+  "intro": "string",
+  "avatar": "string",
+  "work_experience": [
+    {
+      "company": "string",
+      "position": "string",
+      "start_date": "string",
+      "end_date": "string",
+      "description": "string"
+    }
+  ],
+  "education": [
+    {
+      "institution": "string",
+      "degree": "string",
+      "start_date": "string",
+      "end_date": "string",
+      "score": 0
+    }
+  ],
+  "skills": [
+    "string"
+  ],
+  "mental_profile": {},
+  "cv": "string",
+  "applications": [
+    {
+      "1": "yes",
+      "2": "yes",
+      "3": "yes",
+      "4": "yes",
+      "5": "yes",
+      "6": "yes"
+    }
+  ]
+}
+{
+  "iscompany": false,
+  "fullname": "Json Wannabe Abigail",
+  "email": "abi552@junction.com",
+  "years_of_employment": 3,
+  "employment_status": "unemployed",
+  "age": 37,
+  "gender": "Female",
+  "intro": "hello i am a programmer pls hire me",
+  "avatar": "string",
+  "work_experience": [
+    {
+      "company": "alphasense",
+      "position": "ceo",
+      "start_date": "yesterday",
+      "end_date": "tomorrow",
+      "description": "i hired myself and fired myself later cause i loved my peers"
+    }
+  ],
+  "education": [
+    {
+      "institution": "aalto",
+      "degree": "janitor",
+      "start_date": "18.06.2001",
+      "end_date": "19.07.2007",
+      "score": 97
+    }
+  ],
+  "skills": [
+    "docker",
+    "puppy linux"
+  ],
+  "mental_profile": {
+    "happy": "yes",
+    "tired": "no"
+  },
+  "cv": "string",
+  "applications": [
+    "Alphasense"
+  ]
+}

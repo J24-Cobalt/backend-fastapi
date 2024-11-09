@@ -1,0 +1,3 @@
+{"iscompany": true,, "name": "string", "email": "user@example.com", "password": "stringstring", "culture_metric": {}, "jobs": [{"title": "string", "description": "string", "location": "string"}], "logo": "string", "description": "string"}
+{"iscompany": true,, "name": "string", "email": "user@example.com", "password": "stringstring", "culture_metric": {}, "jobs": [{"title": "string", "description": "string", "location": "string"}], "logo": "string", "description": "string"}
+{"iscompany": true,, "name": "stri222ng", "email": "user@example.com", "password": "stringstring", "culture_metric": {}, "jobs": [{"title": "string", "description": "string", "location": "string"}], "logo": "string", "description": "string"}
