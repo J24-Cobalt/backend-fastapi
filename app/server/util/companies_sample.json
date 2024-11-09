@@ -113,5 +113,84 @@
         "description": "GreenFields Oy is committed to sustainable agriculture and environmental research.",
         "potential_applicants": ["Laura Smith", "Sara Martinez"],
         "has_matched": ["Daniel Kim"]
-    }
+    },
+    {
+        "iscompany": true,
+        "name": "FutureTech Innovations",
+        "email": "info@futuretech.io",
+        "password": "futurerocks987654",
+        "sdt_profile": {
+            "autonomy_support": 4,
+            "competence_support": 4.5,
+            "relatedness_support": 4,
+            "growth_and_personal_alignment": 4.5
+        },
+        "jobs": [
+            {
+                "title": "AI Engineer",
+                "description": "Seeking an AI engineer to develop cutting-edge machine learning models.",
+                "location": "Berlin, DE"
+            }
+        ],
+        "logo": "https://example.com/futuretech_logo.png",
+        "description": "FutureTech Innovations pioneers advancements in artificial intelligence and machine learning.",
+        "potential_applicants": ["Evelyn Lee", "Oscar Torres"],
+        "has_matched": ["Julia Novak"]
+    },
+    {
+        "iscompany": true,
+        "name": "GreenTech Solutions",
+        "email": "careers@greentech.com",
+        "password": "greengrowth2023secure",
+        "sdt_profile": {
+            "autonomy_support": 5,
+            "competence_support": 4,
+            "relatedness_support": 4.5,
+            "growth_and_personal_alignment": 5
+        },
+        "jobs": [
+            {
+                "title": "Renewable Energy Analyst",
+                "description": "Hiring a renewable energy analyst to support our solar and wind projects.",
+                "location": "Vancouver, CA"
+            }
+        ],
+        "logo": "https://example.com/greentech_logo.png",
+        "description": "GreenTech Solutions is committed to sustainable energy solutions and eco-friendly technology.",
+        "potential_applicants": ["Thomas Lee", "Rachel Green"],
+        "has_matched": ["Evelyn Lee"]
+    },
+    {
+        "iscompany": true,
+        "name": "MediCare Systems",
+        "email": "hr@medicare.com",
+        "password": "medicaresecurepass1234",
+        "sdt_profile": {
+            "autonomy_support": 3.5,
+            "competence_support": 5,
+            "relatedness_support": 3.5,
+            "growth_and_personal_alignment": 4
+        },
+        "jobs": [
+            {
+                "title": "Health Informatics Specialist",
+                "description": "Seeking a health informatics specialist to manage healthcare data systems.",
+                "location": "Sydney, AU"
+            },
+            {
+                "title": "Renewable Energy Analyst",
+                "description": "Hiring a renewable energy analyst to support our solar and wind projects.",
+                "location": "Vancouver, CA"
+            },
+            {
+                "title": "Miyu's Secretary",
+                "description": "In desperate need of a secretary for our worker.",
+                "location": "Vancouver, CA"
+            }
+        ],
+        "logo": "https://example.com/medicare_logo.png",
+        "description": "MediCare Systems focuses on developing healthcare technology to improve patient outcomes.",
+        "potential_applicants": ["Nina Patel", "Jacob Foster"],
+        "has_matched": ["Thomas Lee"]
+    }   
 ]
