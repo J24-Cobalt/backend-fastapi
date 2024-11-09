@@ -14,6 +14,7 @@ from server.database import (
     submit_applicant_survey,
     applicant_collection,
 )
+from server.company_database import get_job
 from server.models.applicant import (
     ErrorResponseModel,
     ResponseModel,
@@ -122,3 +123,15 @@ async def submit_survey(email: EmailStr, survey: Survey):
             500,
             "failed to submit applicant survey",
         )
+
+
+@router.post("/{email}/apply/{id}")
+async def apply_for_job(email: EmailStr, job_id: int):
+    if await get_job(job_id):
+        await applicant_collection.update_one(
+            {"email": email}, {"$set": {"applications": [job_id]}}
+        )
+        return ResponseModel(
+            "applied for job successfully", "applied for job successfully"
+        )
+    return ErrorResponseModel("failed to apply for job", 404, "job doesn't exist")

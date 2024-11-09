@@ -76,3 +76,10 @@ async def delete_company(email: EmailStr):
 async def delete_all_companies():
     await company_collection.delete_many({})
     return True
+
+
+async def get_job(job_id: int):
+    if company := await company_collection.find_one(
+        {"jobs.job_id": job_id},
+    ):
+        return (job for job in company["jobs"] if job["job_id"] == job_id)

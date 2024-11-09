@@ -1,4 +1,4 @@
-from typing import Dict, Optional, List, Any
+from typing import Optional, List
 
 from pydantic import BaseModel, EmailStr, Field
 
@@ -6,9 +6,12 @@ from server.models.survey import SDTProfile
 
 
 class Job(BaseModel):
+    job_id: int
     title: str
     description: str
     location: str
+    company: EmailStr
+    skills: List[str]
 
 
 class CompanySchema(BaseModel):
@@ -45,9 +48,12 @@ class CompanySchema(BaseModel):
                 },
                 "jobs": [
                     {
+                        "job_id": "AUTOMATICALLY GENERATED, DO NOT PROVIDE",
                         "title": "Software Engineer",
                         "description": "We are looking for a software engineer to join our team.",
                         "location": "Lagos, NG",
+                        "email": "EMAIL OF THIS COMPANY, DO NOT PROVIDE",
+                        "skills": ["docker", "devops", "python", "ai"],
                     }
                 ],
                 "logo": "https://example.com/logo.png",
@@ -92,9 +98,12 @@ class UpdateCompanyModel(BaseModel):
                 },
                 "jobs": [
                     {
+                        "job_id": "AUTOMATICALLY GENERATED, DO NOT PROVIDE",
                         "title": "Software Engineer",
                         "description": "We are looking for a software engineer to join our team.",
                         "location": "Lagos, NG",
+                        "email": "EMAIL OF THE COMPANY, DO NOT PROVIDE",
+                        "skills": ["full-stack", "javascript", "typescript", "openapi"],
                     }
                 ],
                 "logo": "https://example.com/logo.png",

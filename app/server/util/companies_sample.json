@@ -12,9 +12,17 @@
         },
         "jobs": [
             {
+                "job_id": 12345,
                 "title": "Data Scientist",
                 "description": "We are seeking a data scientist to drive our data initiatives.",
-                "location": "Helsinki, FI"
+                "location": "Helsinki, FI",
+                "email": "contact@techwave.com",
+                "skills": [
+                    "data-science",
+                    "python",
+                    "julia",
+                    "machine-learning"
+                ]
             }
         ],
         "logo": "https://example.com/techwave_logo.png",
@@ -35,9 +43,12 @@
         },
         "jobs": [
             {
+                "job_id": 69420,
                 "title": "Environmental Consultant",
                 "description": "Seeking an environmental consultant to assist with green projects.",
-                "location": "Stockholm, SE"
+                "location": "Stockholm, SE",
+                "email": "info@ecofuture.org",
+                "skills": ["communication", "urban-planning"]
             }
         ],
         "logo": "https://example.com/ecofuture_logo.png",
@@ -58,9 +69,12 @@
         },
         "jobs": [
             {
+                "job_id": 67890,
                 "title": "Product Manager",
                 "description": "We are hiring a product manager to lead new product initiatives.",
-                "location": "Oslo, NO"
+                "location": "Oslo, NO",
+                "email": "hr@smartsolutions.com",
+                "skills": ["communication", "team-leader"]
             }
         ],
         "logo": "https://example.com/smartsolutions_logo.png",
@@ -81,9 +95,17 @@
         },
         "jobs": [
             {
+                "job_id": 246783489,
                 "title": "Biomedical Engineer",
                 "description": "Hiring a biomedical engineer to work on healthcare technology solutions.",
-                "location": "Copenhagen, DK"
+                "location": "Copenhagen, DK",
+                "email": "careers@biomedix.com",
+                "skills": [
+                    "embedded-systems",
+                    "c",
+                    "rust",
+                    "electrical-engineering"
+                ]
             }
         ],
         "logo": "https://example.com/biomedix_logo.png",
@@ -104,9 +126,17 @@
         },
         "jobs": [
             {
+                "job_id": 9786141123,
                 "title": "Agricultural Scientist",
                 "description": "Looking for an agricultural scientist to lead sustainable farming projects.",
-                "location": "Amsterdam, NL"
+                "location": "Amsterdam, NL",
+                "email": "jobs@greenfields.com",
+                "skills": [
+                    "research",
+                    "agriculture",
+                    "interviewing",
+                    "teamwork"
+                ]
             }
         ],
         "logo": "https://example.com/greenfields_logo.png",
@@ -127,9 +157,18 @@
         },
         "jobs": [
             {
+                "job_id": 89789374234,
                 "title": "AI Engineer",
                 "description": "Seeking an AI engineer to develop cutting-edge machine learning models.",
-                "location": "Berlin, DE"
+                "location": "Berlin, DE",
+                "email": "info@futuretech.io",
+                "skills": [
+                    "data-science",
+                    "python",
+                    "julia",
+                    "machine-learning",
+                    "training"
+                ]
             }
         ],
         "logo": "https://example.com/futuretech_logo.png",
@@ -150,9 +189,17 @@
         },
         "jobs": [
             {
+                "job_id": 9128361278936,
                 "title": "Renewable Energy Analyst",
                 "description": "Hiring a renewable energy analyst to support our solar and wind projects.",
-                "location": "Vancouver, CA"
+                "location": "Vancouver, CA",
+                "email": "careers@greentech.com",
+                "skills": [
+                    "energy-science",
+                    "creativity",
+                    "teamwork",
+                    "embedded-systems"
+                ]
             }
         ],
         "logo": "https://example.com/greentech_logo.png",
@@ -173,24 +220,37 @@
         },
         "jobs": [
             {
+                "job_id": 8912631,
                 "title": "Health Informatics Specialist",
                 "description": "Seeking a health informatics specialist to manage healthcare data systems.",
-                "location": "Sydney, AU"
+                "location": "Sydney, AU",
+                "email": "hr@medicare.com",
+                "skills": [
+                    "embedded-systems",
+                    "electrical-engineering",
+                    "research"
+                ]
             },
             {
+                "job_id": 7126312783,
                 "title": "Renewable Energy Analyst",
                 "description": "Hiring a renewable energy analyst to support our solar and wind projects.",
-                "location": "Vancouver, CA"
+                "location": "Vancouver, CA",
+                "email": "hr@medicare.com",
+                "skills": ["energy-science", "research", "team-leader"]
             },
             {
+                "job_id": 1273612783,
                 "title": "Miyu's Secretary",
                 "description": "In desperate need of a secretary for our worker.",
-                "location": "Vancouver, CA"
+                "location": "Vancouver, CA",
+                "email": "hr@medicare.com",
+                "skills": ["uwu"]
             }
         ],
         "logo": "https://example.com/medicare_logo.png",
         "description": "MediCare Systems focuses on developing healthcare technology to improve patient outcomes.",
         "potential_applicants": ["Nina Patel", "Jacob Foster"],
         "has_matched": ["Thomas Lee"]
-    }   
+    }
 ]
