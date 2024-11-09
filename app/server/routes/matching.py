@@ -14,6 +14,8 @@ async def match_applicant_to_companies(email):
     if (applicant := await retrieve_applicant(email)) and (
         companies := await retrieve_companies()
     ):
+        print(f"applicant = {applicant}")
+        print(f"companies = {companies}")
         return match_fitting_company(applicant, companies)
     return ErrorResponseModel("An error occurred.", 404, "Applicant doesn't exist.")
 
