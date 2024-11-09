@@ -4,10 +4,11 @@
         "name": "TechWave Oy",
         "email": "contact@techwave.com",
         "password": "strongpassword654321",
-        "culture_metric": {
-            "culture": "Innovative",
-            "environment": "Collaborative",
-            "safety": "Excellent"
+        "sdt_profile": {
+            "autonomy_support": 4,
+            "competence_support": 5,
+            "relatedness_support": 3.5,
+            "growth_and_personal_alignment": 4
         },
         "jobs": [
             {
@@ -26,10 +27,11 @@
         "name": "EcoFuture Oy",
         "email": "info@ecofuture.org",
         "password": "passwordforbusiness1234",
-        "culture_metric": {
-            "culture": "Eco-Friendly",
-            "environment": "Sustainable",
-            "safety": "High Standards"
+        "sdt_profile": {
+            "autonomy_support": 5,
+            "competence_support": 4.5,
+            "relatedness_support": 4,
+            "growth_and_personal_alignment": 5
         },
         "jobs": [
             {
@@ -48,10 +50,11 @@
         "name": "SmartSolutions Oy",
         "email": "hr@smartsolutions.com",
         "password": "complexcompanypass45678",
-        "culture_metric": {
-            "culture": "Progressive",
-            "environment": "Fast-Paced",
-            "safety": "Secure"
+        "sdt_profile": {
+            "autonomy_support": 3.5,
+            "competence_support": 5,
+            "relatedness_support": 3,
+            "growth_and_personal_alignment": 4.5
         },
         "jobs": [
             {
@@ -70,10 +73,11 @@
         "name": "BioMedix Oy",
         "email": "careers@biomedix.com",
         "password": "securepassword789010",
-        "culture_metric": {
-            "culture": "Health-Focused",
-            "environment": "Research-Oriented",
-            "safety": "High Priority"
+        "sdt_profile": {
+            "autonomy_support": 4.5,
+            "competence_support": 4,
+            "relatedness_support": 3.5,
+            "growth_and_personal_alignment": 5
         },
         "jobs": [
             {
@@ -92,10 +96,11 @@
         "name": "GreenFields Oy",
         "email": "jobs@greenfields.com",
         "password": "newcompanypassword112233",
-        "culture_metric": {
-            "culture": "Sustainable",
-            "environment": "Open",
-            "safety": "Very High"
+        "sdt_profile": {
+            "autonomy_support": 5,
+            "competence_support": 4,
+            "relatedness_support": 4.5,
+            "growth_and_personal_alignment": 4
         },
         "jobs": [
             {
