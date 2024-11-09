@@ -9,7 +9,7 @@ def company_helper(company) -> dict:
         "name": company["name"],
         "email": company["email"],
         "password": company["password"],
-        "culture_metric": company["culture_metric"],
+        "sdt_profile": company["sdt_profile"],
         "jobs": company["jobs"],
         "logo": company["logo"],
         "description": company["description"],
