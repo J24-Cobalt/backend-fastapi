@@ -12,7 +12,9 @@ from server.models.matching import (
 router = APIRouter()
 
 
-@router.get("/matching/applicant/{email}", response_description="Match applicant to many companies")
+@router.get(
+    "/applicant/{email}", response_description="Match applicant to many companies"
+)
 async def match_applicant_to_companies(email):
     applicant = await retrieve_applicant(email)
     companies = await retrieve_companies()
@@ -22,7 +24,7 @@ async def match_applicant_to_companies(email):
     return ErrorResponseModel("An error occurred.", 404, "Applicant doesn't exist.")
 
 
-@router.get("/matching/company/{email}", response_description="Match company to many applicants")
+@router.get("/company/{email}", response_description="Match company to many applicants")
 async def match_company_to_applicant(email):
     company = await retrieve_company(email)
     applicants = await retrieve_applicants()
@@ -30,3 +32,4 @@ async def match_company_to_applicant(email):
         matched_applicants = match_fitting_applicant(company, applicants)
         return f"{company} | {matched_applicants}"
     return ErrorResponseModel("An error occurred.", 404, "Company doesn't exist.")
+
