@@ -7,6 +7,7 @@ from server.company_database import (
     retrieve_company,
     retrieve_companies,
     update_company,
+    populate
 )
 from server.models.company import (
     ErrorResponseModel,
@@ -17,6 +18,11 @@ from server.models.company import (
 
 router = APIRouter()
 
+
+@router.post("/populate")
+async def populate_companies():
+    await populate()
+    return {"message": "companies populated successfully"}
 
 @router.post("/", response_description="company data added into the database")
 async def add_company_data(company: CompanySchema = Body(...)):

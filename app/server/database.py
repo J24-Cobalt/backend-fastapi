@@ -44,6 +44,13 @@ def applicant_helper(applicant) -> dict:
 
 # vvvvvvvvvv JUNK TESTING CODE vvvvvvvvvv 
 
+async def populate():
+    import json
+    with open (os.path.join(os.getcwd(), "app/server/util/applicants_sample.json"), "r") as file:
+        applicants = json.load(file)
+        for applicant in applicants:
+            await add_applicant(applicant)
+
 async def retrieve_applicants():
     applicants = []
     async for applicant in applicant_collection.find():

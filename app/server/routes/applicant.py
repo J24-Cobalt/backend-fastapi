@@ -7,6 +7,7 @@ from server.database import (
     retrieve_applicant,
     retrieve_applicants,
     update_applicant,
+    populate,
 )
 from server.models.applicant import (
     ErrorResponseModel,
@@ -17,6 +18,11 @@ from server.models.applicant import (
 
 router = APIRouter()
 
+
+@router.post("/populate")
+async def populate_applicants():
+    await populate()
+    return {"message": "applicants populated successfully"}
 
 @router.post("/", response_description="Applicant data added into the database")
 async def add_applicant_data(applicant: ApplicantSchema = Body(...)):

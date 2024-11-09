@@ -25,6 +25,14 @@ def company_helper(company) -> dict:
 
 # vvvvvvvvvv JUNK TESTING CODE vvvvvvvvvv 
 
+async def populate():
+    import json
+    import os
+    with open (os.path.join(os.getcwd(), "app/server/util/companies_sample.json"), "r") as file:
+        companies = json.load(file)
+        for company in companies:
+            await add_company(company)
+
 # NOT FIT FOR PRODUCTION. PASSWORD NOT HASHED!!! unicode-skull*7
 async def add_company(company_data: dict):
     if await company_collection.find_one({"email": company_data["email"]}):

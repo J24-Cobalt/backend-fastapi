@@ -10,7 +10,6 @@ app.include_router(ApplicantRouter, tags=["Applicant"], prefix="/applicant")
 app.include_router(CompanyRouter, tags=["Company"], prefix="/company")
 app.include_router(MatchingRouter, tags=["Matching"], prefix="/matching")
 
-
 @app.get("/", tags=["Root"])
 async def read_root():
     return {"message": "Welcome to this fantastic app!"}
