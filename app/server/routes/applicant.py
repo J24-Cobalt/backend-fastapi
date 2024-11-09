@@ -9,6 +9,7 @@ from server.database import (
     update_applicant,
     populate,
     log_in_applicant,
+    delete_all_applicants
 )
 from server.models.applicant import (
     ErrorResponseModel,
@@ -85,4 +86,16 @@ async def delete_applicant_data(email: str):
         )
     return ErrorResponseModel(
         "An error occurred", 404, "Applicantwith email {0} doesn't exist".format(email)
+    )
+
+
+@router.delete("/delete_all/", response_description="DELETE ALL APPLICANTS")
+async def delete_all_applicants_data():
+    deleted_applicants = await delete_all_applicants()
+    if deleted_applicants:
+        return ResponseModel(
+            "All applicants removed", "applicants deleted successfully"
+        )
+    return ErrorResponseModel(
+        "An error occurred", 404, "applicants doesn't exist"
     )

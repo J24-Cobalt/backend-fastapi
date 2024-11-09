@@ -21,6 +21,7 @@ class Education(BaseModel):
 
 class ApplicantSchema(BaseModel):
     # - USER INFORMATION -
+    iscompany: bool = Field(...)
     fullname: str = Field(...)
     username: str = Field(...)
     password: str = Field(..., min_length=12)
@@ -56,6 +57,7 @@ class ApplicantSchema(BaseModel):
     class Config:
         schema_extra = {
             "example": {
+                "iscompany": False,
                 "fullname": "John Doe",
                 "username": "Janette Done",
                 "password": "password123456",
@@ -99,6 +101,7 @@ class ApplicantSchema(BaseModel):
 
 class UpdateApplicantModel(BaseModel):
     # - USER INFORMATION -
+    iscompany: Optional[bool]
     fullname: Optional[str]
     username: str = Field(...)
     password: str = Field(..., min_length=12)
@@ -126,6 +129,7 @@ class UpdateApplicantModel(BaseModel):
     class Config:
         schema_extra = {
             "example": {
+                "iscompany": False,
                 "fullname": "John Doe",
                 "username": "Janette Done",
                 "password": "password123456",

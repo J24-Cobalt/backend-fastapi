@@ -11,6 +11,7 @@ class Job(BaseModel):
 
 class CompanySchema(BaseModel):
     # - COMPANY ATTRIBUTES -
+    iscompany: bool = Field(...)
     name: str = Field(...)
     email: EmailStr = Field(...)
     password: str = Field(..., min_length=12)
@@ -30,6 +31,7 @@ class CompanySchema(BaseModel):
     class Config:
         schema_extra = {
             "example": {
+                "iscompany": True,
                 "name": "Company Name",
                 "email": "jdoe@x.edu.ng",
                 "password": "password123456",
@@ -55,6 +57,7 @@ class CompanySchema(BaseModel):
 
 class UpdateCompanyModel(BaseModel):
     # - COMPANY ATTRIBUTES -
+    iscompany: Optional[bool]
     name: Optional[str]
     email: Optional[EmailStr]
     password: Optional[str]
@@ -74,6 +77,7 @@ class UpdateCompanyModel(BaseModel):
     class Config:
         schema_extra = {
             "example": {
+                "iscompany": True,
                 "name": "Company Name",
                 "email": "jdoe@x.edu.ng",
                 "password": "password123456",

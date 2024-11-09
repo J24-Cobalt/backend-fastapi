@@ -1,5 +1,6 @@
 [
     {
+        "iscompany": false,
         "fullname": "Alice Johnson",
         "username": "Alicia J",
         "password": "securepassword98765",
@@ -40,6 +41,7 @@
         "has_matched": ["FinCorp Oy"]
     },
     {
+        "iscompany": false,
         "fullname": "Michael Chen",
         "username": "MikeC123",
         "password": "highsecuritypass20345",
@@ -80,6 +82,7 @@
         "has_matched": ["Cloudify Oy"]
     },
     {
+        "iscompany": false,
         "fullname": "Sara Martinez",
         "username": "SaraM",
         "password": "complexpasscode405673",
@@ -120,6 +123,7 @@
         "has_matched": ["BioGen Oy"]
     },
     {
+        "iscompany": false,
         "fullname": "Daniel Kim",
         "username": "DanK",
         "password": "securepassword99887766",
@@ -160,6 +164,7 @@
         "has_matched": ["DataSolutions Oy"]
     },
     {
+        "iscompany": false,
         "fullname": "Laura Smith",
         "username": "Laura_Smith",
         "password": "ultrasafepassword12345",

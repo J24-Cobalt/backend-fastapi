@@ -1,5 +1,6 @@
 [
     {
+        "iscompany": true,
         "name": "TechWave Oy",
         "email": "contact@techwave.com",
         "password": "strongpassword654321",
@@ -21,6 +22,7 @@
         "has_matched": ["Sara Martinez"]
     },
     {
+        "iscompany": true,
         "name": "EcoFuture Oy",
         "email": "info@ecofuture.org",
         "password": "passwordforbusiness1234",
@@ -42,6 +44,7 @@
         "has_matched": ["Alice Johnson"]
     },
     {
+        "iscompany": true,
         "name": "SmartSolutions Oy",
         "email": "hr@smartsolutions.com",
         "password": "complexcompanypass45678",
@@ -63,6 +66,7 @@
         "has_matched": ["Laura Smith"]
     },
     {
+        "iscompany": true,
         "name": "BioMedix Oy",
         "email": "careers@biomedix.com",
         "password": "securepassword789010",
@@ -84,6 +88,7 @@
         "has_matched": ["Michael Chen"]
     },
     {
+        "iscompany": true,
         "name": "GreenFields Oy",
         "email": "jobs@greenfields.com",
         "password": "newcompanypassword112233",

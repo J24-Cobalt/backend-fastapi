@@ -9,6 +9,7 @@ from server.company_database import (
     update_company,
     populate,
     log_in_company,
+    delete_all_companies,
 )
 from server.models.company import (
     ErrorResponseModel,
@@ -84,4 +85,16 @@ async def delete_company_data(email: str):
         )
     return ErrorResponseModel(
         "An error occurred", 404, "companywith email {0} doesn't exist".format(email)
+    )
+
+
+@router.delete("/delete_all/", response_description="DELETE ALL COMPANIES")
+async def delete_all_companies_data():
+    deleted_companies = await delete_all_companies()
+    if deleted_companies:
+        return ResponseModel(
+            "All companies removed", "companies deleted successfully"
+        )
+    return ErrorResponseModel(
+        "An error occurred", 404, "companies doesn't exist"
     )

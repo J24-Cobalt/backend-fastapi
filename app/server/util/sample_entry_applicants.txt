@@ -1,5 +1,5 @@
 {
-  "id": "672e5c5f442122d6101fdba9",
+  "iscompany": false,
   "fullname": "string",
   "email": "user@example.com",
   "years_of_employment": 0,
@@ -43,7 +43,7 @@
   ]
 }
 {
-  "id": "672e97fd166be0fa56e0e359",
+  "iscompany": false,
   "fullname": "Json Wannabe Abigail",
   "email": "abi552@junction.com",
   "years_of_employment": 3,

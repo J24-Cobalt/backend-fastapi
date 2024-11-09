@@ -13,6 +13,7 @@ company_collection = db.get_collection("companies_collection")
 
 def applicant_helper(applicant) -> dict:
     return {
+        "iscompany": applicant["iscompany"],
         "fullname": applicant["fullname"],
         "username": applicant["username"],
         "password": applicant["password"],
@@ -99,3 +100,7 @@ async def log_in_applicant(email: str, password: str):
     if await applicant_collection.find_one({"email": email, "password": password}):
         return True
     return False
+
+async def delete_all_applicants():
+    await applicant_collection.delete_many({})
+    return True

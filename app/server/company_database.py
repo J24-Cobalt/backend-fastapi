@@ -5,6 +5,7 @@ from server.database import company_collection
 
 def company_helper(company) -> dict:
     return {
+        "iscompany": company["iscompany"],
         "name": company["name"],
         "email": company["email"],
         "password": company["password"],
@@ -70,3 +71,8 @@ async def delete_company(email: str):
     if company := await company_collection.find_one({"email": email}):
         await company_collection.delete_one({"email": email})
     return company
+
+
+async def delete_all_companies():
+    await company_collection.delete_many({})
+    return True
