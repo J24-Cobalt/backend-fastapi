@@ -18,6 +18,13 @@
                 "start_date": "2016-01-15",
                 "end_date": "2023-10-01",
                 "description": "Led cross-functional teams in financial software development."
+            },
+            {
+                "company": "Amazon Ltd.",
+                "position": "Hiring Manager",
+                "start_date": "2020-10-10",
+                "end_date": "2024-01-03",
+                "description": "Filter and hire high-quality applicants."
             }
         ],
         "education": [
@@ -29,12 +36,13 @@
                 "score": 3.9
             }
         ],
-        "skills": ["Project Management", "Agile", "Scrum"],
+        "skills": ["Project Management", "Agile", "Scrum", "Human Resources"],
         "mental_profile": {
-            "autonomy": 4,
-            "competence": 5,
-            "relatedness": 3,
-            "growth alignment": 4
+            "work_life_balance": 5,
+            "growth_opportunities": 2,
+            "supportive_leadership": 2.5,
+            "compensation": 3.5,
+            "innovation": 1.0
         },
         "cv": "https://example.com/cv_alice.pdf",
         "applications": ["BlueWave Oy", "GreenTech Oy"],
@@ -68,14 +76,22 @@
                 "start_date": "2005-09-01",
                 "end_date": "2009-06-01",
                 "score": 3.7
+            },
+            {
+                "institution": "Aalto University",
+                "degree": "Master of Computer Science",
+                "start_date": "2010-12-09",
+                "end_date": "2012-20-05",
+                "score": 4.0
             }
         ],
         "skills": ["Java", "Microservices", "Artificial Intelligence"],
         "mental_profile": {
-            "autonomy": 3,
-            "competence": 5,
-            "relatedness": 2,
-            "growth alignment": 5
+            "work_life_balance": 2,
+            "growth_opportunities": 5,
+            "supportive_leadership": 0.5,
+            "compensation": 5,
+            "innovation": 0
         },
         "cv": "https://example.com/cv_michael.pdf",
         "applications": ["NextGen Oy", "DataStream Oy"],
@@ -193,12 +209,17 @@
                 "score": 3.85
             }
         ],
-        "skills": ["Environmental Science", "Data Analysis", "Policy Development"],
+        "skills": [
+            "Environmental Science",
+            "Data Analysis",
+            "Policy Development"
+        ],
         "mental_profile": {
-            "autonomy": 4,
-            "competence": 3,
-            "relatedness": 5,
-            "growth alignment": 4
+            "work_life_balance": 4,
+            "growth_opportunities": 3,
+            "supportive_leadership": 3,
+            "compensation": 2,
+            "innovation": 4
         },
         "cv": "https://example.com/cv_laura.pdf",
         "applications": ["GreenWorld Oy", "NatureTech Oy"],
