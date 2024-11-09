@@ -29,4 +29,3 @@ async def read_root():
     return {
         "message": "Welcome to Mint! To access the API endpoints please visit /docs"
     }
-

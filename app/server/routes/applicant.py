@@ -1,5 +1,6 @@
 from fastapi import APIRouter, Body  # type: ignore
 from fastapi.encoders import jsonable_encoder  # type: ignore
+from pydantic import EmailStr
 
 from server.database import (
     add_applicant,
@@ -9,7 +10,9 @@ from server.database import (
     update_applicant,
     populate,
     log_in_applicant,
-    delete_all_applicants
+    delete_all_applicants,
+    submit_applicant_survey,
+    applicant_collection,
 )
 from server.models.applicant import (
     ErrorResponseModel,
@@ -17,20 +20,23 @@ from server.models.applicant import (
     ApplicantSchema,
     UpdateApplicantModel,
 )
+from server.models.survey import Survey
 
 router = APIRouter()
 
 
 @router.post("/login")
-async def login_applicant(email: str = Body(...), password: str = Body(...)):
+async def login_applicant(email: EmailStr = Body(...), password: str = Body(...)):
     if await log_in_applicant(email, password):
         return {"message": "logged in successfully"}
     return ErrorResponseModel("failed to log in", 403, "invalid credentials")
+
 
 @router.post("/populate")
 async def populate_applicants():
     await populate()
     return {"message": "applicants populated successfully"}
+
 
 @router.post("/", response_description="Applicant data added into the database")
 async def add_applicant_data(applicant: ApplicantSchema = Body(...)):
@@ -51,7 +57,7 @@ async def get_applicants():
 
 
 @router.get("/{email}", response_description="Applicant data retrieved")
-async def get_applicant_data(email):
+async def get_applicant_data(email: EmailStr):
     applicant = await retrieve_applicant(email)
     if applicant:
         return ResponseModel(applicant, "Applicant data retrieved successfully")
@@ -59,7 +65,7 @@ async def get_applicant_data(email):
 
 
 @router.put("/{email}")
-async def update_applicant_data(email: str, req: UpdateApplicantModel = Body(...)):
+async def update_applicant_data(email: EmailStr, req: UpdateApplicantModel = Body(...)):
     req = {k: v for k, v in req.dict().items() if v is not None}
     updated_applicant = await update_applicant(email, req)
     if updated_applicant:
@@ -77,7 +83,7 @@ async def update_applicant_data(email: str, req: UpdateApplicantModel = Body(...
 @router.delete(
     "/{email}", response_description="Applicant data deleted from the database"
 )
-async def delete_applicant_data(email: str):
+async def delete_applicant_data(email: EmailStr):
     deleted_applicant = await delete_applicant(email)
     if deleted_applicant:
         return ResponseModel(
@@ -96,6 +102,23 @@ async def delete_all_applicants_data():
         return ResponseModel(
             "All applicants removed", "applicants deleted successfully"
         )
-    return ErrorResponseModel(
-        "An error occurred", 404, "applicants doesn't exist"
-    )
+    return ErrorResponseModel("An error occurred", 404, "applicants doesn't exist")
+
+
+@router.post("/survey/{email}")
+async def submit_survey(email: EmailStr, survey: Survey):
+    if not await applicant_collection.find_one({"email": email}):
+        return ErrorResponseModel(
+            "failed to submit applicant survey", 404, "applicant not found"
+        )
+
+    if await submit_applicant_survey(email, survey):
+        return ResponseModel(
+            "submitted applicant survey", "applicant survey submitted successfully"
+        )
+    else:
+        return ErrorResponseModel(
+            "failed to submit applicant survey",
+            500,
+            "failed to submit applicant survey",
+        )

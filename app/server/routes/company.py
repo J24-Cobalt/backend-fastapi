@@ -1,5 +1,6 @@
 from fastapi import APIRouter, Body  # type: ignore
 from fastapi.encoders import jsonable_encoder  # type: ignore
+from pydantic import EmailStr
 
 from server.company_database import (
     add_company,
@@ -20,16 +21,19 @@ from server.models.company import (
 
 router = APIRouter()
 
+
 @router.post("/login")
-async def login_company(email: str = Body(...), password: str = Body(...)):
+async def login_company(email: EmailStr = Body(...), password: str = Body(...)):
     if await log_in_company(email, password):
         return {"message": "logged in successfully"}
     return ErrorResponseModel("failed to log in", 403, "invalid credentials")
+
 
 @router.post("/populate")
 async def populate_companies():
     await populate()
     return {"message": "companies populated successfully"}
+
 
 @router.post("/", response_description="company data added into the database")
 async def add_company_data(company: CompanySchema = Body(...)):
@@ -58,7 +62,7 @@ async def get_company_data(email):
 
 
 @router.put("/{email}")
-async def update_company_data(email: str, req: UpdateCompanyModel = Body(...)):
+async def update_company_data(email: EmailStr, req: UpdateCompanyModel = Body(...)):
     req = {k: v for k, v in req.dict().items() if v is not None}
     updated_company = await update_company(email, req)
     if updated_company:
@@ -76,7 +80,7 @@ async def update_company_data(email: str, req: UpdateCompanyModel = Body(...)):
 @router.delete(
     "/{email}", response_description="company data deleted from the database"
 )
-async def delete_company_data(email: str):
+async def delete_company_data(email: EmailStr):
     deleted_company = await delete_company(email)
     if deleted_company:
         return ResponseModel(
@@ -92,9 +96,6 @@ async def delete_company_data(email: str):
 async def delete_all_companies_data():
     deleted_companies = await delete_all_companies()
     if deleted_companies:
-        return ResponseModel(
-            "All companies removed", "companies deleted successfully"
-        )
-    return ErrorResponseModel(
-        "An error occurred", 404, "companies doesn't exist"
-    )
+        return ResponseModel("All companies removed", "companies deleted successfully")
+    return ErrorResponseModel("An error occurred", 404, "companies doesn't exist")
+

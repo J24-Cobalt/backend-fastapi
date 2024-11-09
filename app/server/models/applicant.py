@@ -1,6 +1,8 @@
-from typing import Dict, Optional, List, Any
+from typing import Optional, List
 
 from pydantic import BaseModel, EmailStr, Field, field_validator  # type: ignore
+
+from server.models.survey import MentalProfile
 
 
 class WorkExperience(BaseModel):
@@ -36,9 +38,7 @@ class ApplicantSchema(BaseModel):
     work_experience: Optional[List[WorkExperience]] = Field(default_factory=list)
     education: Optional[List[Education]] = Field(default_factory=list)
     skills: Optional[List[str]] = Field(default_factory=list)  # List of skills
-    mental_profile: Optional[Dict[str, Any]] = Field(
-        default_factory=dict
-    )  # Mental profile as a dict
+    mental_profile: Optional[MentalProfile]
 
     # - OTHER ATTRIBUTES WE DO NOT CARE ABOUT YET -
     avatar: Optional[str] = Field(None)  # URL to avatar image
@@ -88,9 +88,11 @@ class ApplicantSchema(BaseModel):
                 ],
                 "skills": ["Python", "Django", "Machine Learning"],
                 "mental_profile": {
-                    "personality": "INTJ",
-                    "strengths": ["Analytical", "Strategic"],
-                    "weaknesses": ["Perfectionist"],
+                    "work_life_balance": 4,
+                    "growth_opportunities": 3.5,
+                    "compensation": 4.5,
+                    "supportive_leadership": 3,
+                    "innovation": 2,
                 },
                 "cv": "https://example.com/cv.pdf",
                 "applications": ["string"],
@@ -116,7 +118,7 @@ class UpdateApplicantModel(BaseModel):
     work_experience: Optional[List[WorkExperience]]
     education: Optional[List[Education]]
     skills: Optional[List[str]]
-    mental_profile: Optional[Dict[str, Any]]
+    mental_profile: Optional[MentalProfile]
 
     # - OTHER ATTRIBUTES WE DO NOT CARE ABOUT YET -
     avatar: Optional[str]
@@ -160,9 +162,11 @@ class UpdateApplicantModel(BaseModel):
                 ],
                 "skills": ["Python", "Django", "Machine Learning"],
                 "mental_profile": {
-                    "personality": "INTJ",
-                    "strengths": ["Analytical", "Strategic"],
-                    "weaknesses": ["Perfectionist"],
+                    "work_life_balance": 0,
+                    "growth_opportunities": 5,
+                    "compensation": 5,
+                    "supportive_leadership": 0.5,
+                    "innovation": 4,
                 },
                 "cv": "https://example.com/cv.pdf",
                 "applications": ["string"],
@@ -181,4 +185,3 @@ def ResponseModel(data, message):
 
 def ErrorResponseModel(error, code, message):
     return {"error": error, "code": code, "message": message}
-

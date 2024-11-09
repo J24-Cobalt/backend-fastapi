@@ -10,3 +10,4 @@ def match_fitting_applicant(company, applicants):
         for applicant in applicants:
             file.write(str(applicant) + "\n")
     return applicants[0]
+

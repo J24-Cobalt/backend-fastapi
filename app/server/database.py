@@ -3,6 +3,10 @@ from bson.objectid import ObjectId  # type: ignore
 from typing import Optional
 import os
 
+from pydantic import EmailStr
+
+from server.models.survey import Survey
+
 client = motor.motor_asyncio.AsyncIOMotorClient(
     open(os.path.join(os.getcwd(), "env"), "r").read().strip()
 )
@@ -34,25 +38,19 @@ def applicant_helper(applicant) -> dict:
     }
 
 
+# vvvvvvvvvv JUNK TESTING CODE vvvvvvvvvv
 
-
-
-
-
-
-
-
-
-
-
-# vvvvvvvvvv JUNK TESTING CODE vvvvvvvvvv 
 
 async def populate():
     import json
-    with open (os.path.join(os.getcwd(), "app/server/util/applicants_sample.json"), "r") as file:
+
+    with open(
+        os.path.join(os.getcwd(), "app/server/util/applicants_sample.json"), "r"
+    ) as file:
         applicants = json.load(file)
         for applicant in applicants:
             await add_applicant(applicant)
+
 
 async def retrieve_applicants():
     applicants = []
@@ -71,36 +69,41 @@ async def add_applicant(applicant_data: dict) -> dict:
     return applicant_helper(new_applicant)
 
 
-async def retrieve_applicant(email: str) -> Optional[dict]:
+async def retrieve_applicant(email: EmailStr) -> Optional[dict]:
     applicant = await applicant_collection.find_one({"email": email})
     if applicant:
         return applicant_helper(applicant)
 
 
-async def update_applicant(email: str, data: dict):
+async def update_applicant(email: EmailStr, data: dict):
     if len(data) < 1:
         return False
-    applicant = await applicant_collection.find_one({"email": email})
-    if applicant:
-        updated_applicant = await applicant_collection.update_one(
-            {"email": email}, {"$set": data}
-        )
-        if updated_applicant:
-            return True
-        return False
+    if await applicant_collection.find_one({"email": email}):
+        return await applicant_collection.update_one({"email": email}, {"$set": data})
 
 
-async def delete_applicant(email: str):
+async def delete_applicant(email: EmailStr):
     applicant = await applicant_collection.find_one({"email": email})
     if applicant:
         await applicant_collection.delete_one({"email": email})
         return True
 
-async def log_in_applicant(email: str, password: str):
+
+async def log_in_applicant(email: EmailStr, password: str):
     if await applicant_collection.find_one({"email": email, "password": password}):
         return True
     return False
 
+
 async def delete_all_applicants():
     await applicant_collection.delete_many({})
     return True
+
+
+async def submit_applicant_survey(email: EmailStr, survey: Survey):
+    profile = survey.to_mental_profile()
+
+    return await applicant_collection.update_one(
+        {"email": email},
+        {"$set": {"mental_profile": profile.__dict__}},
+    )
