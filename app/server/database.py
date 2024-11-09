@@ -6,10 +6,9 @@ import os
 client = motor.motor_asyncio.AsyncIOMotorClient(
     open(os.path.join(os.getcwd(), "env"), "r").read().strip()
 )
-applicants_db = client.applicants
-applicant_collection = applicants_db.get_collection("applicants_collection")
-companies_db = client.companies
-company_collection = companies_db.get_collection("companies_collection")
+db = client.db
+applicant_collection = db.get_collection("applicants_collection")
+company_collection = db.get_collection("companies_collection")
 
 
 def applicant_helper(applicant) -> dict:
@@ -54,7 +53,7 @@ async def retrieve_applicants():
 
 # NOT FIT FOR PRODUCTION. PASSWORD NOT HASHED!!! unicode-skull*7
 async def add_applicant(applicant_data: dict) -> dict:
-    if applicant_collection.find_one({"email": applicant_data["email"]}):
+    if await applicant_collection.find_one({"email": applicant_data["email"]}):
         return {}
 
     applicant = await applicant_collection.insert_one(applicant_data)
