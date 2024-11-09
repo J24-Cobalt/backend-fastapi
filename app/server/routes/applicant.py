@@ -1,5 +1,5 @@
-from fastapi import APIRouter, Body  # type: ignore
-from fastapi.encoders import jsonable_encoder  # type: ignore
+from fastapi import APIRouter, Body
+from fastapi.encoders import jsonable_encoder
 from pydantic import EmailStr
 
 from server.database import (

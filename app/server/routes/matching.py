@@ -1,13 +1,8 @@
-from fastapi import APIRouter, Body  # type: ignore
-from fastapi.encoders import jsonable_encoder  # type: ignore
+from fastapi import APIRouter
 from server.database import retrieve_applicants, retrieve_applicant
 from server.company_database import retrieve_companies, retrieve_company
 from server.util.matchmaking import match_fitting_applicant, match_fitting_company
-from server.models.matching import (
-    ErrorResponseModel,
-    ResponseModel,
-    MatchingSchema,
-)
+from server.models.matching import ErrorResponseModel
 
 router = APIRouter()
 
@@ -32,4 +27,3 @@ async def match_company_to_applicant(email):
         matched_applicants = match_fitting_applicant(company, applicants)
         return f"{company} | {matched_applicants}"
     return ErrorResponseModel("An error occurred.", 404, "Company doesn't exist.")
-

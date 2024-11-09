@@ -1,5 +1,5 @@
-from fastapi import APIRouter, Body  # type: ignore
-from fastapi.encoders import jsonable_encoder  # type: ignore
+from fastapi import APIRouter, Body
+from fastapi.encoders import jsonable_encoder
 from pydantic import EmailStr
 
 from server.company_database import (
@@ -98,4 +98,3 @@ async def delete_all_companies_data():
     if deleted_companies:
         return ResponseModel("All companies removed", "companies deleted successfully")
     return ErrorResponseModel("An error occurred", 404, "companies doesn't exist")
-

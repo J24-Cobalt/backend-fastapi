@@ -1,5 +1,4 @@
-import motor.motor_asyncio  # type: ignore
-from bson.objectid import ObjectId  # type: ignore
+import motor.motor_asyncio
 from typing import Optional
 import os
 

@@ -1,4 +1,3 @@
-from bson.objectid import ObjectId  # type: ignore
 from typing import Optional
 from server.database import company_collection
 from pydantic import EmailStr
@@ -77,4 +76,3 @@ async def delete_company(email: EmailStr):
 async def delete_all_companies():
     await company_collection.delete_many({})
     return True
-

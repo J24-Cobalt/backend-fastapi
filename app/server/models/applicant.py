@@ -1,6 +1,6 @@
 from typing import Optional, List
 
-from pydantic import BaseModel, EmailStr, Field, field_validator  # type: ignore
+from pydantic import BaseModel, EmailStr, Field, field_validator
 
 from server.models.survey import MentalProfile
 

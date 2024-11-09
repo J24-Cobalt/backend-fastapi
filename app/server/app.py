@@ -1,4 +1,4 @@
-from fastapi import FastAPI  # type: ignore
+from fastapi import FastAPI
 
 from server.routes.applicant import router as ApplicantRouter
 from server.routes.company import router as CompanyRouter
@@ -9,7 +9,7 @@ origins = [
     "http://localhost:5173",
 ]
 
-app = FastAPI()  # type: ignore
+app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,

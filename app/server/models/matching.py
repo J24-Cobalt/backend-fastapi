@@ -1,6 +1,6 @@
 from typing import Dict, Optional, List, Any
 
-from pydantic import BaseModel, EmailStr, Field  # type: ignore
+from pydantic import BaseModel, Field
 
 
 class Job(BaseModel):
