@@ -7,7 +7,8 @@ from server.company_database import (
     retrieve_company,
     retrieve_companies,
     update_company,
-    populate
+    populate,
+    log_in_company,
 )
 from server.models.company import (
     ErrorResponseModel,
@@ -18,6 +19,11 @@ from server.models.company import (
 
 router = APIRouter()
 
+@router.post("/login")
+async def login_company(email: str = Body(...), password: str = Body(...)):
+    if await log_in_company(email, password):
+        return {"message": "logged in successfully"}
+    return ErrorResponseModel("failed to log in", 403, "invalid credentials")
 
 @router.post("/populate")
 async def populate_companies():

@@ -8,6 +8,7 @@ from server.database import (
     retrieve_applicants,
     update_applicant,
     populate,
+    log_in_applicant,
 )
 from server.models.applicant import (
     ErrorResponseModel,
@@ -18,6 +19,12 @@ from server.models.applicant import (
 
 router = APIRouter()
 
+
+@router.post("/login")
+async def login_applicant(email: str = Body(...), password: str = Body(...)):
+    if await log_in_applicant(email, password):
+        return {"message": "logged in successfully"}
+    return ErrorResponseModel("failed to log in", 403, "invalid credentials")
 
 @router.post("/populate")
 async def populate_applicants():

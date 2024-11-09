@@ -12,4 +12,4 @@ app.include_router(MatchingRouter, tags=["Matching"], prefix="/matching")
 
 @app.get("/", tags=["Root"])
 async def read_root():
-    return {"message": "Welcome to this fantastic app!"}
+    return {"message": "Welcome to Mint! To access the API endpoints please visit /docs"}

@@ -13,21 +13,23 @@ company_collection = db.get_collection("companies_collection")
 
 def applicant_helper(applicant) -> dict:
     return {
-        "id": str(applicant["_id"]),
         "fullname": applicant["fullname"],
+        "username": applicant["username"],
+        "password": applicant["password"],
         "email": applicant["email"],
-        "years_of_employment": applicant["years_of_employment"],
-        "employment_status": applicant["employment_status"],
         "age": applicant["age"],
         "gender": applicant["gender"],
-        "intro": applicant["intro"],
-        "avatar": applicant["avatar"],
-        "work_experience": applicant["work_experience"],
         "education": applicant["education"],
-        "skills": applicant["skills"],
+        "employment_status": applicant["employment_status"],
+        "intro": applicant["intro"],
         "mental_profile": applicant["mental_profile"],
+        "work_experience": applicant["work_experience"],
+        "years_of_employment": applicant["years_of_employment"],
+        "skills": applicant["skills"],
+        "avatar": applicant["avatar"],
         "cv": applicant["cv"],
         "applications": applicant["applications"],
+        "has_matched": applicant["has_matched"],
     }
 
 
@@ -92,3 +94,8 @@ async def delete_applicant(email: str):
     if applicant:
         await applicant_collection.delete_one({"email": email})
         return True
+
+async def log_in_applicant(email: str, password: str):
+    if await applicant_collection.find_one({"email": email, "password": password}):
+        return True
+    return False

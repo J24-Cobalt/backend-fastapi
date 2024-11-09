@@ -5,7 +5,6 @@ from server.database import company_collection
 
 def company_helper(company) -> dict:
     return {
-        "id": str(company["_id"]),
         "name": company["name"],
         "email": company["email"],
         "password": company["password"],
@@ -42,6 +41,10 @@ async def add_company(company_data: dict):
     new_company = await company_collection.find_one({"_id": company.inserted_id})
     return company_helper(new_company)
 
+async def log_in_company(email: str, password: str):
+    if await company_collection.find_one({"email": email, "password": password}):
+        return True
+    return False
 
 async def retrieve_companies():
     companies = []
