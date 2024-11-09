@@ -2,6 +2,8 @@ from typing import Dict, Optional, List, Any
 
 from pydantic import BaseModel, EmailStr, Field
 
+from server.models.survey import SDTProfile
+
 
 class Job(BaseModel):
     title: str
@@ -17,7 +19,7 @@ class CompanySchema(BaseModel):
     password: str = Field(..., min_length=12)
 
     # - JOB ATTRIBUTES -
-    culture_metric: Dict[str, Any] = Field(default_factory=dict)
+    sdt_profile: Optional[SDTProfile]
     jobs: List[Job] = Field(default_factory=list)
     description: Optional[str] = Field(None)
 
@@ -35,10 +37,11 @@ class CompanySchema(BaseModel):
                 "name": "Company Name",
                 "email": "jdoe@x.edu.ng",
                 "password": "password123456",
-                "culture_metric": {
-                    "culture": "Good",
-                    "environment": "Good",
-                    "safety": "Good",
+                "sdt_profile": {
+                    "autonomy_support": 3,
+                    "competence_support": 4,
+                    "relatedness_support": 2.5,
+                    "growth_and_personal_alignment": 5,
                 },
                 "jobs": [
                     {
@@ -63,7 +66,7 @@ class UpdateCompanyModel(BaseModel):
     password: Optional[str]
 
     # - JOB ATTRIBUTES -
-    culture_metric: Optional[Dict[str, Any]]
+    sdt_profile: Optional[SDTProfile]
     jobs: Optional[List[Job]]
     description: Optional[str]
 
@@ -81,10 +84,11 @@ class UpdateCompanyModel(BaseModel):
                 "name": "Company Name",
                 "email": "jdoe@x.edu.ng",
                 "password": "password123456",
-                "culture_metric": {
-                    "culture": "Good",
-                    "environment": "Good",
-                    "safety": "Good",
+                "sdt_profile": {
+                    "autonomy_support": 3,
+                    "competence_support": 4,
+                    "relatedness_support": 2.5,
+                    "growth_and_personal_alignment": 5,
                 },
                 "jobs": [
                     {
