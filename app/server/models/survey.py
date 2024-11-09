@@ -10,12 +10,11 @@ def validate_survey_field(v: float) -> float:
     return v
 
 
-class MentalProfile(BaseModel):
-    work_life_balance: float
-    growth_opportunities: float
-    compensation: float
-    supportive_leadership: float
-    innovation: float
+class SDTProfile(BaseModel):
+    autonomy_support: float
+    competence_support: float
+    relatedness_support: float
+    growth_and_personal_alignment: float
 
 
 class Survey(BaseModel):
@@ -25,7 +24,7 @@ class Survey(BaseModel):
     a3: Annotated[float, AfterValidator(validate_survey_field)]
     a4: Annotated[float, AfterValidator(validate_survey_field)]
 
-    # Compentence Support
+    # Competence Support
     b1: Annotated[float, AfterValidator(validate_survey_field)]
     b2: Annotated[float, AfterValidator(validate_survey_field)]
     b3: Annotated[float, AfterValidator(validate_survey_field)]
@@ -43,11 +42,10 @@ class Survey(BaseModel):
     d3: Annotated[float, AfterValidator(validate_survey_field)]
     d4: Annotated[float, AfterValidator(validate_survey_field)]
 
-    def to_mental_profile(self) -> MentalProfile:
-        return MentalProfile(
-            work_life_balance=5,
-            growth_opportunities=5,
-            supportive_leadership=5,
-            compensation=5,
-            innovation=5,
+    def to_sdtprofile(self) -> SDTProfile:
+        return SDTProfile(
+            autonomy_support=(self.a1 + self.a2 + self.a3 + self.a4) / 4,
+            competence_support=(self.b1 + self.b2 + self.b3 + self.b4) / 4,
+            relatedness_support=(self.c1 + self.c2 + self.c3 + self.c4) / 4,
+            growth_and_personal_alignment=(self.d1 + self.d2 + self.d3 + self.d4) / 4,
         )

@@ -37,12 +37,11 @@
             }
         ],
         "skills": ["Project Management", "Agile", "Scrum", "Human Resources"],
-        "mental_profile": {
-            "work_life_balance": 5,
-            "growth_opportunities": 2,
-            "supportive_leadership": 2.5,
-            "compensation": 3.5,
-            "innovation": 1.0
+        "sdt_profile": {
+            "autonomy_support": 3,
+            "competence_support": 4,
+            "relatedness_support": 2.5,
+            "growth_and_personal_alignment": 5
         },
         "cv": "https://example.com/cv_alice.pdf",
         "applications": ["BlueWave Oy", "GreenTech Oy"],
@@ -86,12 +85,11 @@
             }
         ],
         "skills": ["Java", "Microservices", "Artificial Intelligence"],
-        "mental_profile": {
-            "work_life_balance": 2,
-            "growth_opportunities": 5,
-            "supportive_leadership": 0.5,
-            "compensation": 5,
-            "innovation": 0
+        "sdt_profile": {
+            "autonomy_support": 3,
+            "competence_support": 4,
+            "relatedness_support": 2.5,
+            "growth_and_personal_alignment": 5
         },
         "cv": "https://example.com/cv_michael.pdf",
         "applications": ["NextGen Oy", "DataStream Oy"],
@@ -128,11 +126,11 @@
             }
         ],
         "skills": ["Bioinformatics", "Genetic Data Analysis", "Python"],
-        "mental_profile": {
-            "autonomy": 5,
-            "competence": 4,
-            "relatedness": 3,
-            "growth alignment": 5
+        "sdt_profile": {
+            "autonomy_support": 5,
+            "competence_support": 4,
+            "relatedness_support": 3,
+            "growth_and_personal_alignment": 5
         },
         "cv": "https://example.com/cv_sara.pdf",
         "applications": ["HealthTech Oy", "LifeScience Oy"],
@@ -169,11 +167,11 @@
             }
         ],
         "skills": ["Data Analysis", "SQL", "Machine Learning"],
-        "mental_profile": {
-            "autonomy": 3,
-            "competence": 4,
-            "relatedness": 4,
-            "growth alignment": 3
+        "sdt_profile": {
+            "autonomy_support": 3,
+            "competence_support": 4,
+            "relatedness_support": 2.5,
+            "growth_and_personal_alignment": 5
         },
         "cv": "https://example.com/cv_daniel.pdf",
         "applications": ["InfoTech Oy", "EcoData Oy"],
@@ -214,12 +212,11 @@
             "Data Analysis",
             "Policy Development"
         ],
-        "mental_profile": {
-            "work_life_balance": 4,
-            "growth_opportunities": 3,
-            "supportive_leadership": 3,
-            "compensation": 2,
-            "innovation": 4
+        "sdt_profile": {
+            "autonomy_support": 3,
+            "competence_support": 4,
+            "relatedness_support": 2.5,
+            "growth_and_personal_alignment": 5
         },
         "cv": "https://example.com/cv_laura.pdf",
         "applications": ["GreenWorld Oy", "NatureTech Oy"],

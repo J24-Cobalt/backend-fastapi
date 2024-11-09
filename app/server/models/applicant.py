@@ -2,7 +2,7 @@ from typing import Optional, List
 
 from pydantic import BaseModel, EmailStr, Field, field_validator
 
-from server.models.survey import MentalProfile
+from server.models.survey import SDTProfile
 
 
 class WorkExperience(BaseModel):
@@ -38,7 +38,7 @@ class ApplicantSchema(BaseModel):
     work_experience: Optional[List[WorkExperience]] = Field(default_factory=list)
     education: Optional[List[Education]] = Field(default_factory=list)
     skills: Optional[List[str]] = Field(default_factory=list)  # List of skills
-    mental_profile: Optional[MentalProfile]
+    sdt_profile: Optional[SDTProfile]
 
     # - OTHER ATTRIBUTES WE DO NOT CARE ABOUT YET -
     avatar: Optional[str] = Field(None)  # URL to avatar image
@@ -87,12 +87,11 @@ class ApplicantSchema(BaseModel):
                     }
                 ],
                 "skills": ["Python", "Django", "Machine Learning"],
-                "mental_profile": {
-                    "work_life_balance": 4,
-                    "growth_opportunities": 3.5,
-                    "compensation": 4.5,
-                    "supportive_leadership": 3,
-                    "innovation": 2,
+                "sdt_profile": {
+                    "autonomy_support": 3,
+                    "competence_support": 4,
+                    "relatedness_support": 2.5,
+                    "growth_and_personal_alignment": 5,
                 },
                 "cv": "https://example.com/cv.pdf",
                 "applications": ["string"],
@@ -118,7 +117,7 @@ class UpdateApplicantModel(BaseModel):
     work_experience: Optional[List[WorkExperience]]
     education: Optional[List[Education]]
     skills: Optional[List[str]]
-    mental_profile: Optional[MentalProfile]
+    sdt_profile: Optional[SDTProfile]
 
     # - OTHER ATTRIBUTES WE DO NOT CARE ABOUT YET -
     avatar: Optional[str]
@@ -161,12 +160,11 @@ class UpdateApplicantModel(BaseModel):
                     }
                 ],
                 "skills": ["Python", "Django", "Machine Learning"],
-                "mental_profile": {
-                    "work_life_balance": 0,
-                    "growth_opportunities": 5,
-                    "compensation": 5,
-                    "supportive_leadership": 0.5,
-                    "innovation": 4,
+                "sdt_profile": {
+                    "autonomy_support": 2,
+                    "competence_support": 3,
+                    "relatedness_support": 1.5,
+                    "growth_and_personal_alignment": 3,
                 },
                 "cv": "https://example.com/cv.pdf",
                 "applications": ["string"],

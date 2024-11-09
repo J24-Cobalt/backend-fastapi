@@ -26,7 +26,7 @@ def applicant_helper(applicant) -> dict:
         "education": applicant["education"],
         "employment_status": applicant["employment_status"],
         "intro": applicant["intro"],
-        "mental_profile": applicant["mental_profile"],
+        "sdt_profile": applicant["sdt_profile"],
         "work_experience": applicant["work_experience"],
         "years_of_employment": applicant["years_of_employment"],
         "skills": applicant["skills"],
@@ -100,9 +100,9 @@ async def delete_all_applicants():
 
 
 async def submit_applicant_survey(email: EmailStr, survey: Survey):
-    profile = survey.to_mental_profile()
+    profile = survey.to_sdtprofile()
 
     return await applicant_collection.update_one(
         {"email": email},
-        {"$set": {"mental_profile": profile.__dict__}},
+        {"$set": {"sdt_profile": profile.__dict__}},
     )
