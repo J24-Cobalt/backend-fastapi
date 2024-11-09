@@ -221,5 +221,288 @@
         "cv": "https://example.com/cv_laura.pdf",
         "applications": ["GreenWorld Oy", "NatureTech Oy"],
         "has_matched": ["EcoSolutions Oy"]
+    },
+    {
+        "iscompany": false,
+        "fullname": "Mark Taylor",
+        "username": "Mark_Taylor",
+        "password": "securepassword7890",
+        "email": "mark.taylor@bioconserve.org",
+        "years_of_employment": 7,
+        "employment_status": "employed",
+        "age": 32,
+        "gender": "Male",
+        "intro": "Environmental engineer focused on climate resilience and ecosystem management.",
+        "avatar": "https://example.com/avatar_mark.jpg",
+        "work_experience": [
+            {
+                "company": "GreenEnergy Corp",
+                "position": "Environmental Engineer",
+                "start_date": "2016-04-01",
+                "end_date": "2020-03-31",
+                "description": "Led projects aimed at minimizing industrial carbon footprints."
+            },
+            {
+                "company": "EcoGlobal Solutions",
+                "position": "Lead Environmental Engineer",
+                "start_date": "2020-04-01",
+                "end_date": "present",
+                "description": "Managing initiatives on sustainable urban development and pollution reduction."
+            }
+        ],
+        "education": [
+            {
+                "institution": "University of California, Berkeley",
+                "degree": "Bachelor of Environmental Engineering",
+                "start_date": "2009-09-01",
+                "end_date": "2013-06-01",
+                "score": 3.7
+            },
+            {
+                "institution": "Stanford University",
+                "degree": "Master of Environmental Engineering",
+                "start_date": "2014-09-01",
+                "end_date": "2016-06-01",
+                "score": 3.9
+            }
+        ],
+        "skills": ["Climate Resilience", "Ecosystem Management", "Project Management"],
+        "sdt_profile": {
+            "autonomy_support": 4,
+            "competence_support": 4.5,
+            "relatedness_support": 3,
+            "growth_and_personal_alignment": 4.5
+        },
+        "cv": "https://example.com/cv_mark.pdf",
+        "applications": ["EcoWorld Ltd", "Greenway Solutions"],
+        "has_matched": ["BioConserve Inc"]
+    },
+    {
+        "iscompany": false,
+        "fullname": "Sophia Zhang",
+        "username": "Sophia_Zhang",
+        "password": "password321secure",
+        "email": "sophia.zhang@bioinnovation.org",
+        "years_of_employment": 5,
+        "employment_status": "employed",
+        "age": 29,
+        "gender": "Female",
+        "intro": "Researcher specializing in environmental policy and green technology.",
+        "avatar": "https://example.com/avatar_sophia.jpg",
+        "work_experience": [
+            {
+                "company": "EcoPolicy Lab",
+                "position": "Research Assistant",
+                "start_date": "2018-03-01",
+                "end_date": "2020-06-01",
+                "description": "Assisted in research on climate policy and sustainable energy solutions."
+            },
+            {
+                "company": "Green Horizons Institute",
+                "position": "Policy Analyst",
+                "start_date": "2020-07-01",
+                "end_date": "present",
+                "description": "Analyzes policies to promote renewable energy adoption."
+            }
+        ],
+        "education": [
+            {
+                "institution": "University of Toronto",
+                "degree": "Bachelor of Environmental Studies",
+                "start_date": "2012-09-01",
+                "end_date": "2016-06-01",
+                "score": 3.6
+            },
+            {
+                "institution": "Harvard University",
+                "degree": "Master of Public Policy in Environmental Studies",
+                "start_date": "2016-09-01",
+                "end_date": "2018-06-01",
+                "score": 3.8
+            }
+        ],
+        "skills": ["Environmental Policy", "Green Technology", "Renewable Energy"],
+        "sdt_profile": {
+            "autonomy_support": 3.5,
+            "competence_support": 4,
+            "relatedness_support": 3,
+            "growth_and_personal_alignment": 4
+        },
+        "cv": "https://example.com/cv_sophia.pdf",
+        "applications": ["EcoPolicy Group", "FutureEnergy Ltd"],
+        "has_matched": ["Green Horizons Institute"]
+    },
+    {
+        "iscompany": false,
+        "fullname": "Liam O'Connor",
+        "username": "Liam_OConnor",
+        "password": "supersecretpassword999",
+        "email": "liam.oconnor@ecoscience.org",
+        "years_of_employment": 10,
+        "employment_status": "employed",
+        "age": 38,
+        "gender": "Male",
+        "intro": "Marine biologist dedicated to ocean conservation and sustainability.",
+        "avatar": "https://example.com/avatar_liam.jpg",
+        "work_experience": [
+            {
+                "company": "OceanX Research",
+                "position": "Marine Biologist",
+                "start_date": "2013-05-01",
+                "end_date": "2018-08-01",
+                "description": "Conducted field research on coral reefs and ocean ecosystems."
+            },
+            {
+                "company": "Blue Planet Conservation",
+                "position": "Senior Marine Scientist",
+                "start_date": "2018-09-01",
+                "end_date": "present",
+                "description": "Leads conservation projects focused on protecting marine biodiversity."
+            }
+        ],
+        "education": [
+            {
+                "institution": "University of Miami",
+                "degree": "Bachelor of Marine Biology",
+                "start_date": "2004-09-01",
+                "end_date": "2008-06-01",
+                "score": 3.8
+            },
+            {
+                "institution": "University of Washington",
+                "degree": "Master of Marine Conservation",
+                "start_date": "2009-09-01",
+                "end_date": "2011-06-01",
+                "score": 4.0
+            },
+            {
+                "institution": "University of Queensland",
+                "degree": "PhD in Marine Ecology",
+                "start_date": "2011-09-01",
+                "end_date": "2013-06-01",
+                "score": "Pass"
+            }
+        ],
+        "skills": ["Marine Biology", "Conservation Strategy", "Biodiversity Management"],
+        "sdt_profile": {
+            "autonomy_support": 4.5,
+            "competence_support": 5,
+            "relatedness_support": 3.5,
+            "growth_and_personal_alignment": 4
+        },
+        "cv": "https://example.com/cv_liam.pdf",
+        "applications": ["BlueSea Org", "CoralReef Initiative"],
+        "has_matched": ["Blue Planet Conservation"]
+    },
+    {
+        "iscompany": false,
+        "fullname": "Emma Wilson",
+        "username": "Emma_Wilson",
+        "password": "mypassword123!",
+        "email": "emma.wilson@earthprotector.org",
+        "years_of_employment": 6,
+        "employment_status": "employed",
+        "age": 30,
+        "gender": "Female",
+        "intro": "Wildlife ecologist specializing in habitat preservation and endangered species.",
+        "avatar": "https://example.com/avatar_emma.jpg",
+        "work_experience": [
+            {
+                "company": "EcoGuard",
+                "position": "Field Ecologist",
+                "start_date": "2016-02-01",
+                "end_date": "2019-11-01",
+                "description": "Surveyed wildlife populations and habitats in protected areas."
+            },
+            {
+                "company": "Wildlife Protection Alliance",
+                "position": "Senior Wildlife Ecologist",
+                "start_date": "2020-01-01",
+                "end_date": "present",
+                "description": "Works on strategies to protect endangered species and their ecosystems."
+            }
+        ],
+        "education": [
+            {
+                "institution": "University of Edinburgh",
+                "degree": "Bachelor of Ecology",
+                "start_date": "2008-09-01",
+                "end_date": "2012-06-01",
+                "score": 3.5
+            },
+            {
+                "institution": "University of Oxford",
+                "degree": "Master of Biodiversity Conservation",
+                "start_date": "2013-09-01",
+                "end_date": "2015-06-01",
+                "score": 3.9
+            }
+        ],
+        "skills": ["Habitat Preservation", "Endangered Species Protection", "Field Research"],
+        "sdt_profile": {
+            "autonomy_support": 3.5,
+            "competence_support": 4.5,
+            "relatedness_support": 4,
+            "growth_and_personal_alignment": 4.5
+        },
+        "cv": "https://example.com/cv_emma.pdf",
+        "applications": ["Biodiversity Now", "EcoSafe Solutions"],
+        "has_matched": ["Wildlife Protection Alliance"]
+    },
+    {
+        "iscompany": false,
+        "fullname": "Carlos Rivera",
+        "username": "Carlos_Rivera",
+        "password": "topsecretpass888",
+        "email": "carlos.rivera@urbaneco.org",
+        "years_of_employment": 8,
+        "employment_status": "employed",
+        "age": 34,
+        "gender": "Male",
+        "intro": "Urban ecologist focused on green infrastructure and sustainable urban planning.",
+        "avatar": "https://example.com/avatar_carlos.jpg",
+        "work_experience": [
+            {
+                "company": "CityScape Solutions",
+                "position": "Urban Ecologist",
+                "start_date": "2014-05-01",
+                "end_date": "2018-07-01",
+                "description": "Worked on urban greening projects and green infrastructure solutions."
+            },
+            {
+                "company": "SustainCities Ltd",
+                "position": "Lead Urban Planner",
+                "start_date": "2018-08-01",
+                "end_date": "present",
+                "description": "Leads projects integrating ecological design in urban spaces."
+            }
+        ],
+        "education": [
+            {
+                "institution": "University of Michigan",
+                "degree": "Bachelor of Urban Ecology",
+                "start_date": "2005-09-01",
+                "end_date": "2009-06-01",
+                "score": 3.7
+            },
+            {
+                "institution": "MIT",
+                "degree": "Master of Sustainable Urban Planning",
+                "start_date": "2010-09-01",
+                "end_date": "2012-06-01",
+                "score": 4.0
+            }
+        ],
+        "skills": ["Urban Ecology", "Sustainable Planning", "Green Infrastructure"],
+        "sdt_profile": {
+            "autonomy_support": 4,
+            "competence_support": 5,
+            "relatedness_support": 3,
+            "growth_and_personal_alignment": 5
+        },
+        "cv": "https://example.com/cv_carlos.pdf",
+        "applications": ["GreenUrban Corp", "EcoCity Initiative"],
+        "has_matched": ["SustainCities Ltd"]
     }
+    
 ]
